@@ -23,7 +23,7 @@ export function CtaSection({ content }: CtaSectionProps) {
             <Button href="mailto:hello@edrakna.com" variant="surfaceLight" className={styles.actionPrimary}>
               {content.primaryAction}
             </Button>
-            <Button href="#programs" variant="primaryContainer" className={styles.actionSecondary}>
+            <Button to="/#programs" variant="primaryContainer" className={styles.actionSecondary}>
               {content.secondaryAction}
             </Button>
           </div>

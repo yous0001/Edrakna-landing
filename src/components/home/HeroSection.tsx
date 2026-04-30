@@ -41,13 +41,13 @@ export function HeroSection({ content }: HeroSectionProps) {
             <p className={styles.lead}>{content.description}</p>
 
             <div className={styles.actions}>
-              <Button href="#contact" variant="primary" className={styles.primaryCta}>
+              <Button to="/#contact" variant="primary" className={styles.primaryCta}>
                 {content.primaryAction}
                 <span className={`material-symbols-outlined ${styles.ctaIcon}`}>
                   arrow_back
                 </span>
               </Button>
-              <Button href="#programs" variant="secondary" className={styles.secondaryCta}>
+              <Button to="/#programs" variant="secondary" className={styles.secondaryCta}>
                 {content.secondaryAction}
               </Button>
             </div>

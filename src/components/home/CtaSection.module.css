@@ -1,5 +1,5 @@
 .section {
-  padding: var(--space-20) var(--page-padding) var(--space-24);
+  padding: var(--space-20) var(--page-padding) var(--space-28);
   background: var(--color-background);
 }
 
@@ -70,8 +70,8 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: var(--space-4);
-  margin-block-start: var(--space-12);
+  gap: var(--space-6);
+  margin-block-start: var(--space-16);
 }
 
 .actionPrimary,

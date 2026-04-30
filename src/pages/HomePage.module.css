@@ -4,3 +4,9 @@
   color: var(--color-text-primary);
   background: linear-gradient(180deg, var(--color-bg-section) 0%, var(--color-bg) 52%, var(--color-bg-section) 100%);
 }
+
+.hashTarget {
+  height: 0;
+  scroll-margin-top: var(--header-total-height, 5.5rem);
+  pointer-events: none;
+}

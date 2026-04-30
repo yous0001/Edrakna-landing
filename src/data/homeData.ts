@@ -1,12 +1,6 @@
 import type { HomePageContent } from '../types/home'
 
 export const homePageContent: HomePageContent = {
-  navItems: [
-    { label: 'الرئيسية', href: '#home', isActive: true },
-    { label: 'عن إدراكنا', href: '#about' },
-    { label: 'خدماتنا', href: '#programs' },
-    { label: 'المدونة', href: '#blog' },
-  ],
   hero: {
     eyebrow: 'مستقبل التعليم الذكي بين يديك',
     title: 'إدراكنا: رحلتك الذكية',
@@ -89,7 +83,7 @@ export const homePageContent: HomePageContent = {
     links: [
       { label: 'Privacy Policy', href: '#' },
       { label: 'Terms of Service', href: '#' },
-      { label: 'Contact Us', href: '#contact' },
+      { label: 'Contact Us', href: '/#contact' },
       { label: 'Help Center', href: '#' },
     ],
   },

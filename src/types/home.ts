@@ -6,12 +6,6 @@ export type ButtonVariant =
   | 'primaryContainer'
   | 'surfaceLight'
 
-export interface NavItem {
-  readonly label: string
-  readonly href: string
-  readonly isActive?: boolean
-}
-
 export type ProgramIcon = 'menu_book' | 'star' | 'public'
 
 export type ProgramTone = 'default' | 'inverse' | 'warm'
@@ -54,7 +48,6 @@ export interface FooterLink {
 }
 
 export interface HomePageContent {
-  readonly navItems: readonly NavItem[]
   readonly hero: {
     readonly eyebrow: string
     readonly title: string

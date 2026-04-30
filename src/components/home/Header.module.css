@@ -35,7 +35,7 @@
 .nav {
   display: none;
   justify-content: center;
-  gap: var(--space-8);
+  gap: var(--space-10);
 }
 
 .navLink,
@@ -120,8 +120,8 @@
     display: flex;
     width: min(calc(100% - 2 * var(--page-padding)), var(--container-width));
     margin: 0 auto;
-    margin-block-end: var(--space-2);
-    gap: var(--space-5);
+    margin-block-end: var(--space-3);
+    gap: var(--space-6);
     overflow-x: auto;
     overscroll-behavior-x: contain;
     -webkit-overflow-scrolling: touch;

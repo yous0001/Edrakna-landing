@@ -7,10 +7,10 @@ interface FeaturesSectionProps {
 
 export function FeaturesSection({ content }: FeaturesSectionProps) {
   return (
-    <section className={styles.section} id="about" aria-labelledby="about-title">
+    <section className={styles.section} id="why-edrakna" aria-labelledby="why-edrakna-title">
       <div className={styles.shell}>
         <div className={styles.intro}>
-          <h2 id="about-title" className={styles.title}>
+          <h2 id="why-edrakna-title" className={styles.title}>
             {content.title}
           </h2>
           <p className={styles.lead}>{content.description}</p>

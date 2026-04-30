@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding: clamp(7.5rem, 10vw, 12rem) 0 clamp(var(--space-20), 10vw, var(--space-24));
+  padding: clamp(8.25rem, 11vw, 14rem) 0 clamp(var(--space-20), 11vw, var(--space-24));
   background: var(--color-background);
 }
 
@@ -28,7 +28,7 @@
 @media (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: var(--space-12);
+    gap: var(--space-16);
   }
 
   .copy {
@@ -73,7 +73,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  margin-block-end: var(--space-6);
+  margin-block-end: var(--space-8);
   border: 1px solid rgba(var(--color-primary-rgb) / 0.1);
   border-radius: var(--radius-pill);
   padding: var(--space-2) var(--space-4);
@@ -107,7 +107,7 @@
 
 .lead {
   max-width: 42rem;
-  margin: var(--space-8) 0 0;
+  margin: var(--space-10) 0 0;
   color: var(--color-on-surface-variant);
   font-size: clamp(var(--font-size-lg), 2.6vw, var(--font-size-3xl));
   line-height: var(--line-height-relaxed);
@@ -116,8 +116,8 @@
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-5);
-  margin-block-start: var(--space-12);
+  gap: var(--space-6);
+  margin-block-start: var(--space-16);
 }
 
 .primaryCta {
@@ -166,7 +166,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-6);
-  margin-block-start: var(--space-12);
+  margin-block-start: var(--space-16);
 }
 
 .avatarStack {

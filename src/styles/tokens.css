@@ -67,18 +67,21 @@
   --line-height-relaxed: 1.85;
   --letter-spacing-tight: -0.035em;
 
+  /* Spacing scale — slightly open so blocks breathe more on all breakpoints */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.25rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-10: 2.5rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
-  --space-20: 5rem;
-  --space-24: 6rem;
+  --space-3: 0.875rem;
+  --space-4: 1.125rem;
+  --space-5: 1.375rem;
+  --space-6: 1.75rem;
+  --space-8: 2.5rem;
+  --space-10: 3.25rem;
+  --space-12: 4rem;
+  --space-16: 5.25rem;
+  --space-20: 6.5rem;
+  --space-24: 8rem;
+  --space-28: 9rem;
+  --space-32: 10.5rem;
 
   --radius-sm: 0.5rem;
   --radius-md: 1rem;
@@ -96,8 +99,8 @@
   --shadow-header: 0 1px 3px rgba(15, 23, 42, 0.06);
 
   --container-width: 80rem;
-  --page-padding: clamp(1rem, 4vw, 1.5rem);
-  --page-padding-lg: clamp(1.5rem, 5vw, 3rem);
+  --page-padding: clamp(1.125rem, 4.5vw, 1.75rem);
+  --page-padding-lg: clamp(1.75rem, 5.5vw, 3.5rem);
   --header-height: 5rem;
   --button-height: 3.125rem;
   --duration-fast: 180ms;

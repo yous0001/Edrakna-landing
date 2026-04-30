@@ -1,51 +1,57 @@
-import type { NavItem } from '../../types/home'
+import { Link, useLocation } from 'react-router-dom'
+import { siteNavItems } from '../../data/siteNav'
+import { isNavItemActive } from '../../utils/navActive'
 import { Button } from '../ui/Button'
 import styles from './Header.module.css'
 
-interface HeaderProps {
-  readonly navItems: readonly NavItem[]
-}
+export function Header() {
+  const { pathname, hash } = useLocation()
 
-export function Header({ navItems }: HeaderProps) {
   return (
-    <header className={styles.header} id="home">
+    <header className={styles.header}>
       <div className={styles.inner}>
-        <a className={styles.brand} href="#home" aria-label="إدراكنا الرئيسية">
+        <Link className={styles.brand} to="/" aria-label="إدراكنا الرئيسية">
           <img src="/logo.png" alt="" width={160} height={40} />
-        </a>
+        </Link>
 
         <nav className={styles.nav} aria-label="روابط الموقع">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={item.isActive ? styles.navLinkActive : styles.navLink}
-            >
-              {item.label}
-            </a>
-          ))}
+          {siteNavItems.map((item) => {
+            const active = isNavItemActive(pathname, hash, item.to)
+            return (
+              <Link
+                key={item.to}
+                to={item.to}
+                className={active ? styles.navLinkActive : styles.navLink}
+              >
+                {item.label}
+              </Link>
+            )
+          })}
         </nav>
 
         <div className={styles.actions}>
-          <a href="#contact" className={styles.loginLink}>
+          <Link to="/#contact" className={styles.loginLink}>
             تسجيل الدخول
-          </a>
-          <Button href="#contact" variant="primary" className={styles.cta}>
+          </Link>
+          <Button to="/#contact" variant="primary" className={styles.cta}>
             ابدأ الآن
           </Button>
         </div>
       </div>
 
       <nav className={styles.navMobile} aria-label="روابط الموقع — جوّال">
-        {navItems.map((item) => (
-          <a
-            key={`m-${item.href}`}
-            href={item.href}
-            className={item.isActive ? styles.navMobileLinkActive : styles.navMobileLink}
-          >
-            {item.label}
-          </a>
-        ))}
+        {siteNavItems.map((item) => {
+          const active = isNavItemActive(pathname, hash, item.to)
+          return (
+            <Link
+              key={`m-${item.to}`}
+              to={item.to}
+              className={active ? styles.navMobileLinkActive : styles.navMobileLink}
+            >
+              {item.label}
+            </Link>
+          )
+        })}
       </nav>
 
       <div className={styles.hairline} aria-hidden="true" />

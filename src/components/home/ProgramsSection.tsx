@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import type { HomePageContent, ProgramCard as ProgramCardModel } from '../../types/home'
 import styles from './ProgramsSection.module.css'
 
@@ -39,10 +40,10 @@ export function ProgramsSection({ content }: ProgramsSectionProps) {
               </div>
               <h3 className={styles.cardTitle}>{card.title}</h3>
               <p className={styles.cardBody}>{card.description}</p>
-              <a href="#contact" className={styles.explore}>
+              <Link to="/#contact" className={styles.explore}>
                 استكشف المسار
                 <span className={`material-symbols-outlined ${styles.exploreIcon}`}>arrow_back</span>
-              </a>
+              </Link>
             </article>
           ))}
         </div>
