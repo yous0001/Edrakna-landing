@@ -1,0 +1,114 @@
+.features {
+  padding: var(--space-20) 0 var(--space-24);
+  background:
+    linear-gradient(180deg, var(--color-bg-section), var(--color-bg)),
+    var(--color-bg);
+}
+
+.container {
+  width: min(100% - (var(--page-padding) * 2), var(--container-width));
+  margin-inline: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.28fr;
+  gap: var(--space-6);
+  margin-block-start: var(--space-12);
+}
+
+.card {
+  display: grid;
+  min-height: 15rem;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-10);
+  text-align: start;
+}
+
+.card:nth-child(2) {
+  min-height: 17rem;
+}
+
+.wide {
+  grid-column: span 1;
+  min-height: 17rem;
+}
+
+.icon {
+  display: inline-grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  place-items: center;
+  border-radius: var(--radius-lg);
+  color: var(--color-brand-primary);
+  background: var(--color-brand-soft);
+  font-size: var(--font-size-xs);
+  font-weight: 900;
+}
+
+.card h3 {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-xl);
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.card p {
+  max-width: 32rem;
+  margin: var(--space-4) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+.featured {
+  color: var(--color-text-inverse);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.13), transparent 8rem),
+    linear-gradient(135deg, var(--color-button-primary), #0754ad);
+  box-shadow: var(--shadow-blue);
+}
+
+.featured:nth-child(4) {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(77, 154, 215, 0.22), transparent 7rem),
+    var(--color-surface-strong);
+  box-shadow: var(--shadow-elevated);
+}
+
+.featured .icon {
+  color: var(--color-text-inverse);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.featured h3,
+.featured p {
+  color: var(--color-text-inverse);
+}
+
+.featured p {
+  opacity: 0.78;
+}
+
+@media (max-width: 920px) {
+  .features {
+    padding-block: var(--space-16);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 32rem;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: var(--space-8);
+  }
+}

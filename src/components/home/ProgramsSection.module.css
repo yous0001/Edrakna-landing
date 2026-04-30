@@ -1,0 +1,114 @@
+.programs {
+  padding: var(--space-24) 0 var(--space-20);
+  background: var(--color-bg-section);
+}
+
+.container {
+  width: min(100% - (var(--page-padding) * 2), var(--container-width));
+  margin-inline: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+  gap: var(--space-6);
+  margin-block-start: var(--space-12);
+}
+
+.card {
+  display: flex;
+  min-height: 19rem;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-10);
+  text-align: start;
+}
+
+.card::before {
+  position: absolute;
+  inset: auto auto -5rem -5rem;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background: rgba(var(--color-brand-primary-rgb) / 0.06);
+  content: '';
+}
+
+.icon {
+  display: inline-grid;
+  width: 3.35rem;
+  height: 3.35rem;
+  margin-block-end: var(--space-8);
+  place-items: center;
+  border-radius: var(--radius-lg);
+  color: var(--color-brand-primary);
+  background: var(--color-brand-soft);
+  font-size: var(--font-size-sm);
+  font-weight: 900;
+}
+
+.card h3 {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-xl);
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.card p {
+  margin: var(--space-4) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+.card a {
+  position: relative;
+  z-index: 1;
+  margin-block-start: auto;
+  padding-block-start: var(--space-8);
+  color: var(--color-brand-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.featured {
+  color: var(--color-text-inverse);
+  background:
+    radial-gradient(circle at 78% 16%, rgba(255, 255, 255, 0.14), transparent 6rem),
+    var(--color-surface-strong);
+  transform: translateY(-1.2rem);
+}
+
+.featured .icon {
+  color: var(--color-text-inverse);
+  background: rgba(255, 255, 255, 0.11);
+}
+
+.featured h3,
+.featured p,
+.featured a {
+  color: var(--color-text-inverse);
+}
+
+.featured p {
+  opacity: 0.76;
+}
+
+@media (max-width: 920px) {
+  .programs {
+    padding-block: var(--space-16);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 29rem;
+    margin-inline: auto;
+  }
+
+  .featured {
+    transform: none;
+  }
+}

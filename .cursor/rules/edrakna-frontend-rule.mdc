@@ -1,0 +1,15 @@
+---
+description: Edrakna React frontend architecture and styling standards
+globs: src/**/*.{ts,tsx,css}
+alwaysApply: false
+---
+
+# Edrakna Frontend Rules
+
+- Use TypeScript for all React code. Define clear interfaces for section data and props; avoid `any`.
+- Keep `App.tsx` thin. Compose pages from `src/pages`, page sections from `src/components/home`, and shared primitives from `src/components/ui`.
+- Put reusable text/content models in `src/data` and `src/types`; avoid duplicating repeated card data in JSX.
+- Style components with CSS Modules only. Keep global CSS limited to resets, base element styles, and tokens.
+- Use named tokens from `src/styles/tokens.css` for colors, spacing, shadows, radius, typography, and transitions. Do not add raw color literals in component modules unless creating a new token.
+- Keep Arabic/RTL layout intentional with `dir="rtl"` at page level and logical CSS properties such as `margin-inline`, `padding-inline`, and `text-align: start`.
+- Preserve accessibility basics: semantic sections, labelled navigation, meaningful alt text for informative images, empty alt for decorative images, and visible focus states.
