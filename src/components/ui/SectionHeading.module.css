@@ -22,6 +22,7 @@
 
 .heading h2 {
   margin: 0;
+  overflow-wrap: anywhere;
   color: var(--color-text-primary);
   font-family: var(--font-family-heading);
   font-size: clamp(var(--font-size-2xl), 3vw, var(--font-size-4xl));
@@ -32,6 +33,7 @@
 
 .heading p {
   margin: var(--space-3) 0 0;
+  overflow-wrap: anywhere;
   color: var(--color-text-muted);
   font-size: var(--font-size-base);
   line-height: var(--line-height-relaxed);

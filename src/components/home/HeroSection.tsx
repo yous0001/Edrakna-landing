@@ -11,47 +11,90 @@ interface HeroSectionProps {
     readonly secondaryAction: string
     readonly statLabel: string
     readonly statValue: string
+    readonly trustBefore: string
+    readonly trustHighlight: string
+    readonly trustAfter: string
   }
 }
 
 export function HeroSection({ content }: HeroSectionProps) {
   return (
     <section className={styles.hero} aria-labelledby="hero-title">
-      <div className={styles.container}>
-        <div className={styles.visual} aria-hidden="true">
-          <div className={styles.photoCard}>
-            <div className={styles.studentGroup}>
-              <span className={`${styles.student} ${styles.studentOne}`} />
-              <span className={`${styles.student} ${styles.studentTwo}`} />
-              <span className={`${styles.student} ${styles.studentThree}`} />
-              <span className={`${styles.student} ${styles.studentFour}`} />
-            </div>
-            <div className={styles.statCard}>
-              <span className={styles.statIcon}>↗</span>
-              <span>
-                <strong>{content.statValue}</strong>
-                {content.statLabel}
-              </span>
-            </div>
-          </div>
-        </div>
+      <div className={styles.blobPrimary} aria-hidden="true" />
+      <div className={styles.blobSecondary} aria-hidden="true" />
 
-        <div className={styles.copy}>
-          <span className={styles.eyebrow}>{content.eyebrow}</span>
-          <h1 id="hero-title">
-            {content.title}
-            <span>{content.highlightedTitle}</span>
-          </h1>
-          <p>{content.description}</p>
-          <div className={styles.actions}>
-            <Button href="#contact">{content.primaryAction}</Button>
-            <Button href="#programs" variant="secondary">
-              {content.secondaryAction}
-            </Button>
+      <div className={styles.shell}>
+        <div className={styles.grid}>
+          <div className={styles.copy}>
+            <div className={styles.eyebrow}>
+              <span className={`material-symbols-outlined ${styles.eyebrowIcon}`}>
+                auto_awesome
+              </span>
+              {content.eyebrow}
+            </div>
+
+            <h1 id="hero-title" className={styles.title}>
+              {content.title} <br />
+              <span className={styles.titleGradient}>{content.highlightedTitle}</span>
+            </h1>
+
+            <p className={styles.lead}>{content.description}</p>
+
+            <div className={styles.actions}>
+              <Button href="#contact" variant="primary" className={styles.primaryCta}>
+                {content.primaryAction}
+                <span className={`material-symbols-outlined ${styles.ctaIcon}`}>
+                  arrow_back
+                </span>
+              </Button>
+              <Button href="#programs" variant="secondary" className={styles.secondaryCta}>
+                {content.secondaryAction}
+              </Button>
+            </div>
+
+            <div className={styles.trust}>
+              <div className={styles.avatarStack} aria-hidden="true">
+                <span className={styles.avatarFake} />
+                <span className={styles.badgeK}>+5k</span>
+              </div>
+              <p className={styles.trustText}>
+                {content.trustBefore}
+                <span className={styles.trustEm}>{content.trustHighlight}</span>
+                {content.trustAfter}
+              </p>
+            </div>
           </div>
-          <div className={styles.microProof}>
-            <span className={styles.avatar} />
-            <span>انضم إلى طلاب يدرسون بخطة واضحة ونتائج قابلة للقياس.</span>
+
+          <div className={styles.visual}>
+            <div className={styles.imageDecorCircle} aria-hidden="true" />
+            <div className={styles.imageDecorSquare} aria-hidden="true" />
+
+            <div className={styles.visualInner}>
+              <div className={styles.photoFrame}>
+                <img
+                  src="/hero-students.png"
+                  width={640}
+                  height={800}
+                  alt="طلاب وطالبات يدرسون مع الأجهزة اللوحية ضمن بيئة تعليم تفاعلية"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                  className={styles.photo}
+                />
+
+                <div className={styles.statGlass}>
+                  <div>
+                    <div className={styles.statValue}>{content.statValue}</div>
+                    <div className={styles.statLabel}>{content.statLabel}</div>
+                  </div>
+                  <div className={styles.statIconWrap}>
+                    <span className={`material-symbols-outlined ${styles.statIcon}`}>
+                      trending_up
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

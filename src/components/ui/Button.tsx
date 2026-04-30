@@ -26,7 +26,15 @@ export function Button({
   className = '',
   ...props
 }: ButtonProps) {
-  const classNames = [styles.button, styles[variant], className].filter(Boolean).join(' ')
+  const variantClass =
+    variant === 'outlineLight'
+      ? styles.outlineLight
+      : variant === 'primaryContainer'
+        ? styles.primaryContainer
+        : variant === 'surfaceLight'
+          ? styles.surfaceLight
+          : styles[variant]
+  const classNames = [styles.button, variantClass, className].filter(Boolean).join(' ')
 
   if ('href' in props && props.href) {
     const anchorProps = props as AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }

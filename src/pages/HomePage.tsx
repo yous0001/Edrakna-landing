@@ -17,7 +17,10 @@ export function HomePage() {
         <FeaturesSection content={homePageContent.features} />
         <CtaSection content={homePageContent.cta} />
       </main>
-      <Footer navItems={homePageContent.navItems} />
+      <Footer
+        tagline={homePageContent.footer.tagline}
+        links={homePageContent.footer.links}
+      />
     </div>
   )
 }
