@@ -29,15 +29,19 @@ export function Button({
   const classNames = [styles.button, styles[variant], className].filter(Boolean).join(' ')
 
   if ('href' in props && props.href) {
+    const anchorProps = props as AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }
+
     return (
-      <a className={classNames} {...props}>
+      <a className={classNames} {...anchorProps}>
         {children}
       </a>
     )
   }
 
+  const buttonProps = props as ButtonHTMLAttributes<HTMLButtonElement>
+
   return (
-    <button className={classNames} type="button" {...props}>
+    <button {...buttonProps} className={classNames} type={buttonProps.type ?? 'button'}>
       {children}
     </button>
   )
