@@ -161,3 +161,22 @@
     padding-top: 0;
   }
 }
+
+@media (max-width: 640px) {
+  .item {
+    gap: var(--space-6);
+  }
+
+  .itemIcon {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+  .itemTitle {
+    font-size: var(--font-size-xl);
+  }
+
+  .mosaicGrid {
+    grid-template-columns: 1fr;
+  }
+}

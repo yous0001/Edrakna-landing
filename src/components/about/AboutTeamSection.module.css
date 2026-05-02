@@ -146,3 +146,17 @@
     transition: none;
   }
 }
+
+@media (max-width: 640px) {
+  .title {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .lead {
+    font-size: var(--font-size-base);
+  }
+
+  .name {
+    font-size: var(--font-size-xl);
+  }
+}

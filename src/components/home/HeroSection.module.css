@@ -392,6 +392,16 @@
   .statGlass {
     padding: var(--space-4);
   }
+
+  .trust {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+  }
+
+  .trustText {
+    text-align: center;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

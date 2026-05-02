@@ -289,3 +289,18 @@
     align-self: center;
   }
 }
+
+@media (max-width: 640px) {
+  .title {
+    font-size: clamp(2rem, 9vw, 2.9rem);
+  }
+
+  .frame img {
+    height: min(28rem, 84vw);
+  }
+
+  .floatCard {
+    width: 100%;
+    justify-content: center;
+  }
+}

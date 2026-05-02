@@ -296,3 +296,23 @@
     animation: none;
   }
 }
+
+@media (max-width: 767px) {
+  .stats {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .statRule {
+    display: none;
+  }
+
+  .visualWrap {
+    width: 100%;
+  }
+
+  .orbit {
+    width: 13.5rem;
+    height: 13.5rem;
+  }
+}
