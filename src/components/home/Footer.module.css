@@ -82,6 +82,12 @@
   opacity: 1;
 }
 
+.nav a:focus-visible {
+  border-radius: var(--radius-sm);
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
 .social {
   display: flex;
   gap: var(--space-4);
@@ -95,6 +101,12 @@
 
 .social a:hover {
   opacity: 1;
+}
+
+.social a:focus-visible {
+  border-radius: var(--radius-sm);
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
 }
 
 .socialIcon {

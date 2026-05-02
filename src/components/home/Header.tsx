@@ -11,7 +11,7 @@ export function Header() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <Link className={styles.brand} to="/" aria-label="إدراكنا الرئيسية">
-          <img src="/logo.png" alt="" width={160} height={40} />
+          <img src="/logo.png" alt="شعار إدراكنا" width={216} height={72} />
         </Link>
 
         <nav className={styles.nav} aria-label="روابط الموقع">
@@ -22,6 +22,7 @@ export function Header() {
                 key={item.to}
                 to={item.to}
                 className={active ? styles.navLinkActive : styles.navLink}
+                aria-current={active ? 'page' : undefined}
               >
                 {item.label}
               </Link>
@@ -47,6 +48,7 @@ export function Header() {
               key={`m-${item.to}`}
               to={item.to}
               className={active ? styles.navMobileLinkActive : styles.navMobileLink}
+              aria-current={active ? 'page' : undefined}
             >
               {item.label}
             </Link>

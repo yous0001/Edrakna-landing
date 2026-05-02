@@ -230,6 +230,12 @@
   transition: gap 0.2s ease;
 }
 
+.explore:focus-visible {
+  border-radius: var(--radius-sm);
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
 .cardDefault .explore,
 .cardWarm .explore {
   color: var(--color-primary);
