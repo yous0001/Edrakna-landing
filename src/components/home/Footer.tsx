@@ -1,4 +1,5 @@
 import type { FooterLink } from '../../types/home'
+import { Link } from 'react-router-dom'
 import styles from './Footer.module.css'
 
 interface FooterProps {
@@ -17,9 +18,15 @@ export function Footer({ tagline, links }: FooterProps) {
 
         <nav className={styles.nav} aria-label="روابط الموقع">
           {links.map((link) => (
-            <a key={link.href + link.label} href={link.href}>
-              {link.label}
-            </a>
+            link.href.startsWith('/') ? (
+              <Link key={link.href + link.label} to={link.href}>
+                {link.label}
+              </Link>
+            ) : (
+              <a key={link.href + link.label} href={link.href}>
+                {link.label}
+              </a>
+            )
           ))}
         </nav>
 

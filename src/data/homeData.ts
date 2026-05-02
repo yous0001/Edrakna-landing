@@ -81,10 +81,10 @@ export const homePageContent: HomePageContent = {
   footer: {
     tagline: '© 2024 Edrakna. Intelligence for EdTech.',
     links: [
-      { label: 'Privacy Policy', href: '#' },
-      { label: 'Terms of Service', href: '#' },
-      { label: 'Contact Us', href: '/#contact' },
-      { label: 'Help Center', href: '#' },
+      { label: 'Privacy Policy', href: '/privacy-policy' },
+      { label: 'Terms of Service', href: '/terms-of-service' },
+      { label: 'Contact Us', href: '/contact' },
+      { label: 'Help Center', href: '/help-center' },
     ],
   },
 }

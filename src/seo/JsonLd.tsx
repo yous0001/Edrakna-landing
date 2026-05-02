@@ -145,17 +145,18 @@ export function JsonLdHomePage({ title, description }: JsonLdHomePageProps) {
 interface JsonLdAboutPageProps {
   readonly title: string
   readonly description: string
+  readonly path?: string
 }
 
-export function JsonLdAboutPage({ title, description }: JsonLdAboutPageProps) {
+export function JsonLdAboutPage({ title, description, path = '/about' }: JsonLdAboutPageProps) {
   const origin = siteOrigin()
   const data = {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
-    '@id': `${origin}/about/#webpage`,
+    '@id': `${origin}${path}/#webpage`,
     name: title,
     description,
-    url: absoluteUrl('/about'),
+    url: absoluteUrl(path),
     inLanguage: 'ar',
     isPartOf: { '@id': `${origin}/#website` },
     about: { '@id': `${origin}/#organization` },

@@ -8,6 +8,21 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 function seoStaticFilesPlugin(origin: string): Plugin {
   const base = origin.replace(/\/$/, '')
+  const sitemapRoutes: Array<{
+    path: string
+    changefreq: 'weekly' | 'monthly'
+    priority: string
+  }> = [
+    { path: '/', changefreq: 'weekly', priority: '1' },
+    { path: '/about', changefreq: 'monthly', priority: '0.8' },
+    { path: '/services', changefreq: 'weekly', priority: '0.85' },
+    { path: '/student-success', changefreq: 'weekly', priority: '0.8' },
+    { path: '/contact', changefreq: 'monthly', priority: '0.75' },
+    { path: '/privacy-policy', changefreq: 'monthly', priority: '0.5' },
+    { path: '/terms-of-service', changefreq: 'monthly', priority: '0.5' },
+    { path: '/help-center', changefreq: 'weekly', priority: '0.6' },
+  ]
+
   return {
     name: 'edrakna-seo-static',
     closeBundle() {
@@ -29,18 +44,14 @@ function seoStaticFilesPlugin(origin: string): Plugin {
         [
           '<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-          '  <url>',
-          `    <loc>${base}/</loc>`,
-          `    <lastmod>${lastmod}</lastmod>`,
-          '    <changefreq>weekly</changefreq>',
-          '    <priority>1</priority>',
-          '  </url>',
-          '  <url>',
-          `    <loc>${base}/about</loc>`,
-          `    <lastmod>${lastmod}</lastmod>`,
-          '    <changefreq>monthly</changefreq>',
-          '    <priority>0.8</priority>',
-          '  </url>',
+          ...sitemapRoutes.flatMap((route) => [
+            '  <url>',
+            `    <loc>${base}${route.path === '/' ? '/' : route.path}</loc>`,
+            `    <lastmod>${lastmod}</lastmod>`,
+            `    <changefreq>${route.changefreq}</changefreq>`,
+            `    <priority>${route.priority}</priority>`,
+            '  </url>',
+          ]),
           '</urlset>',
           '',
         ].join('\n'),

@@ -31,10 +31,10 @@ export function Header() {
         </nav>
 
         <div className={styles.actions}>
-          <Link to="/#contact" className={styles.loginLink}>
+          <Link to="/contact" className={styles.loginLink}>
             تسجيل الدخول
           </Link>
-          <Button to="/#contact" variant="primary" className={styles.cta}>
+          <Button to="/contact" variant="primary" className={styles.cta}>
             ابدأ الآن
           </Button>
         </div>
