@@ -1,10 +1,6 @@
 import { Link } from 'react-router-dom'
-import type { AboutPageContent } from '../../types/about'
+import type { AboutHeroSectionProps } from '../../types/componentProps'
 import styles from './AboutHeroSection.module.css'
-
-interface AboutHeroSectionProps {
-  readonly content: AboutPageContent['hero']
-}
 
 export function AboutHeroSection({ content }: AboutHeroSectionProps) {
   return (

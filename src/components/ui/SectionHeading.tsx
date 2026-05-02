@@ -1,12 +1,5 @@
+import type { SectionHeadingProps } from '../../types/componentProps'
 import styles from './SectionHeading.module.css'
-
-interface SectionHeadingProps {
-  readonly eyebrow?: string
-  readonly title: string
-  readonly titleId?: string
-  readonly description?: string
-  readonly align?: 'center' | 'start'
-}
 
 export function SectionHeading({
   eyebrow,

@@ -1,11 +1,6 @@
-import type { FooterLink } from '../../types/home'
+import type { FooterProps } from '../../types/componentProps'
 import { Link } from 'react-router-dom'
 import styles from './Footer.module.css'
-
-interface FooterProps {
-  readonly tagline: string
-  readonly links: readonly FooterLink[]
-}
 
 export function Footer({ tagline, links }: FooterProps) {
   return (

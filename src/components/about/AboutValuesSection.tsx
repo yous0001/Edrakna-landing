@@ -1,9 +1,5 @@
-import type { AboutPageContent } from '../../types/about'
+import type { AboutValuesSectionProps } from '../../types/componentProps'
 import styles from './AboutValuesSection.module.css'
-
-interface AboutValuesSectionProps {
-  readonly content: AboutPageContent['values']
-}
 
 export function AboutValuesSection({ content }: AboutValuesSectionProps) {
   const [a, b, c, d] = content.mosaic

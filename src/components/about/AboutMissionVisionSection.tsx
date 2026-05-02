@@ -1,12 +1,6 @@
 import { Fragment } from 'react'
-import type { AboutPageContent } from '../../types/about'
+import type { AboutMissionVisionSectionProps } from '../../types/componentProps'
 import styles from './AboutMissionVisionSection.module.css'
-
-interface AboutMissionVisionSectionProps {
-  readonly mission: AboutPageContent['mission']
-  readonly vision: AboutPageContent['vision']
-  readonly commitment: AboutPageContent['commitment']
-}
 
 export function AboutMissionVisionSection({
   mission,

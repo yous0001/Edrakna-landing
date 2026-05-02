@@ -1,10 +1,6 @@
-import type { HomePageContent } from '../../types/home'
+import type { CtaSectionProps } from '../../types/componentProps'
 import { Button } from '../ui/Button'
 import styles from './CtaSection.module.css'
-
-interface CtaSectionProps {
-  readonly content: HomePageContent['cta']
-}
 
 export function CtaSection({ content }: CtaSectionProps) {
   return (

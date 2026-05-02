@@ -1,12 +1,5 @@
-import type { AboutTeamMember } from '../../types/about'
+import type { AboutTeamSectionProps } from '../../types/componentProps'
 import styles from './AboutTeamSection.module.css'
-
-interface AboutTeamSectionProps {
-  readonly kicker: string
-  readonly title: string
-  readonly description: string
-  readonly members: readonly AboutTeamMember[]
-}
 
 export function AboutTeamSection({ kicker, title, description, members }: AboutTeamSectionProps) {
   return (

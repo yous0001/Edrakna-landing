@@ -1,9 +1,5 @@
-import type { AboutPageContent } from '../../types/about'
+import type { AboutPageCtaProps } from '../../types/componentProps'
 import styles from './AboutPageCta.module.css'
-
-interface AboutPageCtaProps {
-  readonly content: AboutPageContent['cta']
-}
 
 export function AboutPageCta({ content }: AboutPageCtaProps) {
   return (

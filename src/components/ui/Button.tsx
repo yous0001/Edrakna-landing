@@ -1,32 +1,7 @@
-import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react'
-import { Link, type LinkProps } from 'react-router-dom'
-import type { ButtonVariant } from '../../types/home'
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
+import { Link } from 'react-router-dom'
+import type { ButtonProps } from '../../types/componentProps'
 import styles from './Button.module.css'
-
-type SharedButtonProps = {
-  readonly children: ReactNode
-  readonly variant?: ButtonVariant
-  readonly className?: string
-}
-
-type ButtonAsButton = SharedButtonProps &
-  ButtonHTMLAttributes<HTMLButtonElement> & {
-    readonly href?: never
-    readonly to?: never
-  }
-
-type ButtonAsAnchor = SharedButtonProps &
-  AnchorHTMLAttributes<HTMLAnchorElement> & {
-    readonly href: string
-    readonly to?: never
-  }
-
-type ButtonAsRouterLink = SharedButtonProps &
-  Omit<LinkProps, 'className' | 'children'> & {
-    readonly href?: never
-  }
-
-type ButtonProps = ButtonAsButton | ButtonAsAnchor | ButtonAsRouterLink
 
 export function Button({
   children,
@@ -45,8 +20,7 @@ export function Button({
   const classNames = [styles.button, variantClass, className].filter(Boolean).join(' ')
 
   if ('to' in props && props.to != null && props.to !== '') {
-    const { to, replace, state, preventScrollReset, relative, ...linkRest } =
-      props as ButtonAsRouterLink
+    const { to, replace, state, preventScrollReset, relative, ...linkRest } = props
     return (
       <Link
         to={to}

@@ -1,11 +1,4 @@
-import type { GenericPageSection } from '../components/common/GenericContentPage'
-
-interface StaticPageData {
-  readonly kicker: string
-  readonly title: string
-  readonly lead: string
-  readonly sections: readonly GenericPageSection[]
-}
+import type { StaticPageData } from '../types/componentProps'
 
 export const servicesPageData: StaticPageData = {
   kicker: 'الخدمات',

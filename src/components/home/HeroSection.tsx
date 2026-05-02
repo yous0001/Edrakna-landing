@@ -1,21 +1,6 @@
 import { Button } from '../ui/Button'
+import type { HeroSectionProps } from '../../types/componentProps'
 import styles from './HeroSection.module.css'
-
-interface HeroSectionProps {
-  readonly content: {
-    readonly eyebrow: string
-    readonly title: string
-    readonly highlightedTitle: string
-    readonly description: string
-    readonly primaryAction: string
-    readonly secondaryAction: string
-    readonly statLabel: string
-    readonly statValue: string
-    readonly trustBefore: string
-    readonly trustHighlight: string
-    readonly trustAfter: string
-  }
-}
 
 export function HeroSection({ content }: HeroSectionProps) {
   return (

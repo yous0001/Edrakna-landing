@@ -1,11 +1,5 @@
-import type { HTMLAttributes, ReactNode } from 'react'
+import type { CardProps } from '../../types/componentProps'
 import styles from './Card.module.css'
-
-interface CardProps extends HTMLAttributes<HTMLElement> {
-  readonly children: ReactNode
-  readonly as?: 'article' | 'div'
-  readonly elevated?: boolean
-}
 
 export function Card({
   children,

@@ -1,10 +1,6 @@
 import { Link } from 'react-router-dom'
-import type { HomePageContent, ProgramCard as ProgramCardModel } from '../../types/home'
+import type { ProgramsSectionProps, ProgramCardModel } from '../../types/componentProps'
 import styles from './ProgramsSection.module.css'
-
-interface ProgramsSectionProps {
-  readonly content: HomePageContent['programs']
-}
 
 function toneClass(card: ProgramCardModel) {
   if (card.tone === 'inverse') return styles.cardInverse

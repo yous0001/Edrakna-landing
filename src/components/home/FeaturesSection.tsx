@@ -1,9 +1,5 @@
-import type { HomePageContent } from '../../types/home'
+import type { FeaturesSectionProps } from '../../types/componentProps'
 import styles from './FeaturesSection.module.css'
-
-interface FeaturesSectionProps {
-  readonly content: HomePageContent['features']
-}
 
 export function FeaturesSection({ content }: FeaturesSectionProps) {
   return (

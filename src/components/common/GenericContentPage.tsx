@@ -1,22 +1,7 @@
 import { Footer } from '../home/Footer'
 import { Header } from '../home/Header'
 import styles from './GenericContentPage.module.css'
-import type { FooterLink } from '../../types/home'
-
-export interface GenericPageSection {
-  readonly title: string
-  readonly paragraphs?: readonly string[]
-  readonly bullets?: readonly string[]
-}
-
-interface GenericContentPageProps {
-  readonly kicker: string
-  readonly title: string
-  readonly lead: string
-  readonly sections: readonly GenericPageSection[]
-  readonly footerTagline: string
-  readonly footerLinks: readonly FooterLink[]
-}
+import type { GenericContentPageProps } from '../../types/componentProps'
 
 export function GenericContentPage({
   kicker,
