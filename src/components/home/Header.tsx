@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { siteNavItems } from '../../data/siteNav'
 import { isNavItemActive } from '../../utils/navActive'
@@ -6,6 +7,7 @@ import styles from './Header.module.css'
 
 export function Header() {
   const { pathname, hash } = useLocation()
+  const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <header className={styles.header}>
@@ -37,10 +39,37 @@ export function Header() {
           <Button to="/contact" variant="primary" className={styles.cta}>
             ابدأ الآن
           </Button>
+          <button
+            type="button"
+            className={styles.menuButton}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-site-menu"
+            aria-label={menuOpen ? 'إغلاق القائمة' : 'فتح القائمة'}
+            onClick={() => setMenuOpen((prev) => !prev)}
+          >
+            <span className="material-symbols-outlined">
+              {menuOpen ? 'close' : 'menu'}
+            </span>
+          </button>
         </div>
       </div>
 
-      <nav className={styles.navMobile} aria-label="روابط الموقع — جوّال">
+      <nav
+        id="mobile-site-menu"
+        className={`${styles.navMobile} ${menuOpen ? styles.navMobileOpen : ''}`}
+        aria-label="روابط الموقع — جوّال"
+      >
+        <div className={styles.mobileMenuHeader}>
+          <span className={styles.mobileMenuTitle}>القائمة</span>
+          <button
+            type="button"
+            className={styles.mobileCloseButton}
+            aria-label="إغلاق القائمة"
+            onClick={() => setMenuOpen(false)}
+          >
+            <span className="material-symbols-outlined">close</span>
+          </button>
+        </div>
         {siteNavItems.map((item) => {
           const active = isNavItemActive(pathname, hash, item.to)
           return (
@@ -49,11 +78,29 @@ export function Header() {
               to={item.to}
               className={active ? styles.navMobileLinkActive : styles.navMobileLink}
               aria-current={active ? 'page' : undefined}
+              onClick={() => setMenuOpen(false)}
             >
               {item.label}
             </Link>
           )
         })}
+        <div className={styles.mobileActions}>
+          <Link
+            to="/contact"
+            className={styles.mobileLoginLink}
+            onClick={() => setMenuOpen(false)}
+          >
+            تسجيل الدخول
+          </Link>
+          <Button
+            to="/contact"
+            variant="primary"
+            className={styles.mobileCta}
+            onClick={() => setMenuOpen(false)}
+          >
+            ابدأ الآن
+          </Button>
+        </div>
       </nav>
 
       <div className={styles.hairline} aria-hidden="true" />

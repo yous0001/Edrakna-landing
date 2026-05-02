@@ -70,6 +70,9 @@
 .navLink:focus-visible,
 .navLinkActive:focus-visible,
 .loginLink:focus-visible,
+.menuButton:focus-visible,
+.mobileCloseButton:focus-visible,
+.mobileLoginLink:focus-visible,
 .navMobileLink:focus-visible,
 .navMobileLinkActive:focus-visible {
   border-radius: var(--radius-sm);
@@ -120,6 +123,23 @@
   box-shadow: 0 14px 34px rgba(var(--color-primary-rgb) / 0.38);
 }
 
+.menuButton {
+  display: none;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--color-slate-700);
+  cursor: pointer;
+}
+
+.menuButton span,
+.mobileCloseButton span {
+  font-size: 1.3rem;
+}
+
 .hairline {
   height: 1px;
   background: var(--color-slate-100);
@@ -140,39 +160,82 @@
     display: none;
   }
 
-  .navMobile {
-    display: flex;
-    width: min(calc(100% - 2 * var(--page-padding)), var(--container-width));
-    margin: 0 auto var(--space-3);
-    gap: var(--space-3);
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    scroll-snap-type: x proximity;
-    padding: 0.45rem;
-    border: 1px solid rgba(148, 163, 184, 0.2);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.92);
-    box-shadow:
-      0 10px 26px rgba(15, 23, 42, 0.09),
-      inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  .menuButton {
+    display: grid;
   }
 
-  .navMobile::-webkit-scrollbar {
-    display: none;
+  .navMobile {
+    position: fixed;
+    top: calc(var(--header-height) + var(--space-2));
+    right: var(--page-padding);
+    left: var(--page-padding);
+    z-index: 70;
+    display: flex;
+    flex-direction: column;
+    width: min(calc(100% - 2 * var(--page-padding)), var(--container-width));
+    margin-inline: auto;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    border: 1px solid rgba(148, 163, 184, 0.24);
+    border-radius: var(--radius-xl);
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow:
+      0 18px 44px rgba(15, 23, 42, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    transform: translateY(-0.5rem) scale(0.98);
+    pointer-events: none;
+    visibility: hidden;
+    transition:
+      opacity var(--duration-fast) ease,
+      transform var(--duration-fast) ease,
+      visibility var(--duration-fast) ease;
+  }
+
+  .navMobileOpen {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  .mobileMenuHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-1);
+  }
+
+  .mobileMenuTitle {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-xs);
+    font-weight: 800;
+    color: var(--color-slate-700);
+    letter-spacing: var(--letter-spacing-tight);
+  }
+
+  .mobileCloseButton {
+    display: grid;
+    place-items: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--color-slate-700);
+    cursor: pointer;
   }
 
   .navMobileLink,
   .navMobileLinkActive {
-    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     font-family: var(--font-family-display);
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     text-decoration: none;
-    white-space: nowrap;
-    scroll-snap-align: start;
-    border-radius: var(--radius-pill);
-    padding: 0.5rem 0.9rem;
+    border-radius: var(--radius-lg);
+    padding: 0.8rem 0.95rem;
     border: 1px solid transparent;
     transition:
       color var(--duration-fast) ease,
@@ -204,6 +267,35 @@
     box-shadow:
       0 8px 20px rgba(var(--color-primary-rgb) / 0.33),
       inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+
+  .mobileActions {
+    display: grid;
+    gap: var(--space-2);
+    margin-top: var(--space-1);
+    padding-top: var(--space-2);
+    border-top: 1px solid rgba(148, 163, 184, 0.2);
+  }
+
+  .mobileLoginLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2.45rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(148, 163, 184, 0.32);
+    color: var(--color-slate-700);
+    background: #ffffff;
+    text-decoration: none;
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+  }
+
+  .mobileCta {
+    width: 100%;
+    min-height: 2.55rem;
+    justify-content: center;
   }
 }
 
@@ -252,6 +344,10 @@
   .loginLink {
     display: none;
   }
+
+  .cta {
+    display: none;
+  }
 }
 
 @media (max-width: 420px) {
@@ -259,19 +355,10 @@
     max-width: 9.75rem;
   }
 
-  .cta {
-    min-height: 2.35rem;
-    padding-inline: var(--space-3);
-  }
-
-  .navMobile {
-    gap: var(--space-3);
-    padding: 0.35rem;
-  }
-
   .navMobileLink,
   .navMobileLinkActive {
-    padding: 0.45rem 0.75rem;
+    padding: 0.75rem 0.8rem;
+    font-size: var(--font-size-xs);
   }
 }
 
