@@ -17,7 +17,14 @@ export function AboutPage() {
     title: aboutSeo.title,
     description: aboutSeo.description,
     path: aboutSeo.path,
-    extraKeywords: ['من نحن إدراكنا', 'رسالة إدراكنا', 'فريق إدراكنا'],
+    extraKeywords: [
+      'من نحن إدراكنا',
+      'رسالة إدراكنا',
+      'فريق إدراكنا',
+      'ادراكنا التعليمية',
+      'شرح المناهج في مصر',
+      'منصة تعليمية مصرية',
+    ],
   })
   return (
     <div className={styles.page} dir="rtl">

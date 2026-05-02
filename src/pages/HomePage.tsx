@@ -5,14 +5,30 @@ import { Footer } from '../components/home/Footer'
 import { Header } from '../components/home/Header'
 import { HeroSection } from '../components/home/HeroSection'
 import { ProgramsSection } from '../components/home/ProgramsSection'
+import { JsonLdHomePage } from '../seo/JsonLd'
 import { usePageSeo } from '../seo/pageSeo'
 import { homeSeo } from '../seo/seoCopy'
 import styles from './HomePage.module.css'
 
 export function HomePage() {
-  usePageSeo({ ...homeSeo })
+  usePageSeo({
+    ...homeSeo,
+    extraKeywords: [
+      'ادراكنا',
+      'edrakna',
+      'شرح',
+      'شرح المناهج المصرية',
+      'شرح الصف الأول الثانوي',
+      'شرح الصف الثاني الثانوي',
+      'شرح الصف الثالث الثانوي',
+      'كورسات ثانوي',
+      'كورسات ابتدائي',
+      'كورسات إعدادي',
+    ],
+  })
   return (
     <div className={styles.page} id="home" dir="rtl">
+      <JsonLdHomePage title={homeSeo.title} description={homeSeo.description} />
       <Header />
       <main>
         <HeroSection content={homePageContent.hero} />
