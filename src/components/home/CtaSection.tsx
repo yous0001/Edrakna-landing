@@ -1,8 +1,12 @@
+import { useState } from 'react'
 import type { CtaSectionProps } from '../../types/componentProps'
+import { DemoBookingModal } from '../common/DemoBookingModal'
 import { Button } from '../ui/Button'
 import styles from './CtaSection.module.css'
 
 export function CtaSection({ content }: CtaSectionProps) {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
     <section className={styles.section} id="contact" aria-labelledby="cta-title">
       <div className={styles.shell}>
@@ -16,15 +20,26 @@ export function CtaSection({ content }: CtaSectionProps) {
           <p className={styles.lead}>{content.description}</p>
 
           <div className={styles.actions}>
-            <Button href="mailto:hello@edrakna.com" variant="surfaceLight" className={styles.actionPrimary}>
+            <Button
+              variant="surfaceLight"
+              className={styles.actionPrimary}
+              onClick={() => setModalOpen(true)}
+            >
               {content.primaryAction}
             </Button>
-            <Button to="/#programs" variant="primaryContainer" className={styles.actionSecondary}>
+            <Button
+              variant="primaryContainer"
+              className={styles.actionSecondary}
+              onClick={() => setModalOpen(true)}
+            >
               {content.secondaryAction}
             </Button>
           </div>
         </div>
       </div>
+
+      <DemoBookingModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   )
 }
+

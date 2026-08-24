@@ -1,7 +1,7 @@
 import { GenericContentPage } from '../components/common/GenericContentPage'
 import { homePageContent } from '../data/homeData'
 import { contactPageData } from '../data/staticPagesData'
-import { JsonLdAboutPage } from '../seo/JsonLd'
+import { JsonLdAboutPage, JsonLdBreadcrumbs } from '../seo/JsonLd'
 import { usePageSeo } from '../seo/pageSeo'
 import { contactSeo } from '../seo/seoCopy'
 
@@ -18,6 +18,7 @@ export function ContactPage() {
         description={contactSeo.description}
         path={contactSeo.path}
       />
+      <JsonLdBreadcrumbs items={[{ name: 'تواصل معنا', path: '/contact' }]} />
       <GenericContentPage
         kicker={contactPageData.kicker}
         title={contactPageData.title}

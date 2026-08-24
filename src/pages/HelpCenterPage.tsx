@@ -1,7 +1,7 @@
 import { GenericContentPage } from '../components/common/GenericContentPage'
 import { homePageContent } from '../data/homeData'
 import { helpCenterPageData } from '../data/staticPagesData'
-import { JsonLdAboutPage } from '../seo/JsonLd'
+import { JsonLdAboutPage, JsonLdBreadcrumbs } from '../seo/JsonLd'
 import { usePageSeo } from '../seo/pageSeo'
 import { helpSeo } from '../seo/seoCopy'
 
@@ -11,6 +11,7 @@ export function HelpCenterPage() {
   return (
     <>
       <JsonLdAboutPage title={helpSeo.title} description={helpSeo.description} path={helpSeo.path} />
+      <JsonLdBreadcrumbs items={[{ name: 'مركز المساعدة', path: '/help-center' }]} />
       <GenericContentPage
         kicker={helpCenterPageData.kicker}
         title={helpCenterPageData.title}

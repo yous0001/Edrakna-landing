@@ -1,0 +1,66 @@
+.fab {
+  position: fixed;
+  bottom: 1.75rem;
+  left: 1.75rem;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1.25rem;
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-base);
+  transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+.fab:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.55);
+}
+
+.fab:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.label {
+  white-space: nowrap;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.75);
+  }
+}
+
+@media (max-width: 640px) {
+  .fab {
+    bottom: 1.25rem;
+    left: 1.25rem;
+    padding: 0.65rem 1rem;
+    font-size: var(--font-size-xs);
+  }
+
+  .label {
+    display: none;
+  }
+  
+  .fab {
+    padding: 0.75rem;
+    border-radius: 50%;
+  }
+}

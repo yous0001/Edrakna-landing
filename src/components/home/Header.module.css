@@ -4,10 +4,17 @@
   right: 0;
   left: 0;
   z-index: 50;
-  background: color-mix(in srgb, white 84%, transparent);
-  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   box-shadow: var(--shadow-header);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+  border-bottom: 1px solid var(--color-border-soft);
+  transition: background-color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+[data-theme="dark"] .header {
+  background: rgba(11, 15, 25, 0.8);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
 .inner {
@@ -91,17 +98,25 @@
   display: none;
   font-family: var(--font-family-display);
   font-size: var(--font-size-sm);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-slate-600);
   text-decoration: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
   letter-spacing: var(--letter-spacing-tight);
   transition:
     color var(--duration-fast) ease,
     transform var(--duration-fast) ease;
 }
 
+[data-theme="dark"] .loginLink {
+  color: var(--color-slate-300);
+}
+
 .loginLink:hover {
-  color: var(--color-primary);
+  color: var(--color-brand-primary);
 }
 
 .loginLink:active {
@@ -109,17 +124,26 @@
 }
 
 .cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   min-height: 2.65rem;
   padding-inline: var(--space-6);
   border-radius: var(--radius-pill);
+  background: var(--color-brand-primary);
+  color: #ffffff;
   font-family: var(--font-family-display);
   font-size: var(--font-size-sm);
   font-weight: 700;
   white-space: nowrap;
+  text-decoration: none;
   box-shadow: 0 10px 24px rgba(var(--color-primary-rgb) / 0.3);
+  transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
 }
 
 .cta:hover {
+  transform: translateY(-1px);
   box-shadow: 0 14px 34px rgba(var(--color-primary-rgb) / 0.38);
 }
 
@@ -135,8 +159,45 @@
   cursor: pointer;
 }
 
+.skipLink {
+  position: absolute;
+  top: -9999px;
+  right: 1.25rem;
+  z-index: 1000;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--color-brand-primary);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+}
+
+.skipLink:focus {
+  top: 1rem;
+}
+
+.themeToggleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: transform var(--duration-fast) ease, background-color var(--duration-fast) ease;
+}
+
+.themeToggleBtn:hover {
+  transform: scale(1.05);
+  background: var(--color-surface-muted);
+}
+
 .menuButton span,
-.mobileCloseButton span {
+.mobileCloseButton span,
+.themeToggleBtn span {
   font-size: 1.3rem;
 }
 

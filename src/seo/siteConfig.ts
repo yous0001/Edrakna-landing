@@ -18,14 +18,19 @@ export const SEO_KEYWORDS = [
   'منصة تعليمية',
   'تعليم إلكتروني مصر',
   'منصة تعليمية مصرية',
+  'ثانوية عامة',
+  'امتحانات الثانوية العامة',
   'شرح المناهج',
   'شرح الدروس',
   'شرح أونلاين',
   'شرح منهج',
   'شرح الرياضيات',
   'شرح العلوم',
+  'شرح الدراسات الاجتماعية',
   'شرح العربي',
   'شرح الانجليزي',
+  'شرح الفيزياء',
+  'شرح الكيمياء',
   'كورسات ثانوي',
   'كورسات إعدادي',
   'كورسات ابتدائي',
@@ -48,8 +53,11 @@ export const SEO_KEYWORDS = [
   'مناهج مصر',
   'المنهج الوطني',
   'دبلومة أمريكية',
-  'IGCSE',
+  'SAT Egypt',
+  'ACT Prep Egypt',
+  'IGCSE Egypt',
   'American diploma Egypt',
+  'مدرسين معتمدين',
   'دروس أونلاين',
   'تميز أكاديمي',
   'التعليم الرقمي',
@@ -70,3 +78,15 @@ export function absoluteUrl(path: string): string {
   }
   return `${origin}${path.startsWith('/') ? path : `/${path}`}`
 }
+
+export const DEFAULT_DASHBOARD_URL = 'https://edrakna-dashboard.vercel.app'
+
+export function dashboardUrl(path: string = '/login'): string {
+  const raw = import.meta.env.VITE_DASHBOARD_URL?.trim()
+  const base = raw ? raw.replace(/\/$/, '') : DEFAULT_DASHBOARD_URL
+  if (!path || path === '/') {
+    return base
+  }
+  return `${base}${path.startsWith('/') ? path : `/${path}`}`
+}
+

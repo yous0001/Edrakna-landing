@@ -66,12 +66,14 @@
   padding-inline: var(--space-12);
   padding-block: var(--space-4);
   border-radius: var(--radius-pill);
+  border: none;
   background: white;
   color: var(--color-primary);
   font-family: var(--font-family-display);
   font-size: var(--font-size-xl);
   font-weight: 800;
   text-decoration: none;
+  cursor: pointer;
   transition:
     box-shadow var(--duration-fast) ease,
     transform var(--duration-fast) ease;
@@ -97,6 +99,7 @@
   font-size: var(--font-size-xl);
   font-weight: 800;
   text-decoration: none;
+  cursor: pointer;
   transition:
     background var(--duration-fast) ease,
     border-color var(--duration-fast) ease;

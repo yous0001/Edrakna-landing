@@ -6,7 +6,7 @@ export type ButtonVariant =
   | 'primaryContainer'
   | 'surfaceLight'
 
-export type ProgramIcon = 'menu_book' | 'star' | 'public'
+export type ProgramIcon = 'menu_book' | 'star' | 'public' | 'stars' | 'auto_awesome' | 'school' | (string & {})
 
 export type ProgramTone = 'default' | 'inverse' | 'warm'
 

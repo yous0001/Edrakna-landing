@@ -1,7 +1,11 @@
+import { useState } from 'react'
 import type { AboutPageCtaProps } from '../../types/componentProps'
+import { DemoBookingModal } from '../common/DemoBookingModal'
 import styles from './AboutPageCta.module.css'
 
 export function AboutPageCta({ content }: AboutPageCtaProps) {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
     <section className={styles.section} aria-labelledby="about-page-cta-title">
       <div className={styles.shell}>
@@ -13,16 +17,27 @@ export function AboutPageCta({ content }: AboutPageCtaProps) {
             </h2>
             <p className={styles.lead}>{content.description}</p>
             <div className={styles.actions}>
-              <a className={styles.primary} href="mailto:hello@edrakna.com">
+              <button
+                type="button"
+                className={styles.primary}
+                onClick={() => setModalOpen(true)}
+              >
                 {content.primaryAction}
-              </a>
-              <a className={styles.secondary} href="mailto:hello@edrakna.com">
+              </button>
+              <button
+                type="button"
+                className={styles.secondary}
+                onClick={() => setModalOpen(true)}
+              >
                 {content.secondaryAction}
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </div>
+
+      <DemoBookingModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   )
 }
+

@@ -1,10 +1,25 @@
+import { useState } from 'react'
+import { DemoBookingModal } from '../common/DemoBookingModal'
 import { Button } from '../ui/Button'
 import type { HeroSectionProps } from '../../types/componentProps'
 import styles from './HeroSection.module.css'
 
+const SUBJECT_TAGS = [
+  'الرياضيات',
+  'العلوم',
+  'الدراسات الاجتماعية',
+  'الفيزياء',
+  'الكيمياء',
+  'SAT Math',
+  'EST / ACT',
+  'اللغة الإنجليزية',
+]
+
 export function HeroSection({ content }: HeroSectionProps) {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
-    <section className={styles.hero} aria-labelledby="hero-title">
+    <section className={styles.hero} id="main-content" aria-labelledby="hero-title">
       <div className={styles.blobPrimary} aria-hidden="true" />
       <div className={styles.blobSecondary} aria-hidden="true" />
 
@@ -25,8 +40,29 @@ export function HeroSection({ content }: HeroSectionProps) {
 
             <p className={styles.lead}>{content.description}</p>
 
+            <div className={styles.subjectPills}>
+              <span className={styles.pillLabel}>أبرز المواد:</span>
+              {SUBJECT_TAGS.map((tag) => (
+                <button
+                  key={tag}
+                  type="button"
+                  className={styles.pillChip}
+                  onClick={() => setModalOpen(true)}
+                >
+                  <span className="material-symbols-outlined" style={{ fontSize: '1rem' }}>
+                    menu_book
+                  </span>
+                  {tag}
+                </button>
+              ))}
+            </div>
+
             <div className={styles.actions}>
-              <Button to="/contact" variant="primary" className={styles.primaryCta}>
+              <Button
+                variant="primary"
+                className={styles.primaryCta}
+                onClick={() => setModalOpen(true)}
+              >
                 {content.primaryAction}
                 <span className={`material-symbols-outlined ${styles.ctaIcon}`}>
                   arrow_back
@@ -83,6 +119,9 @@ export function HeroSection({ content }: HeroSectionProps) {
           </div>
         </div>
       </div>
+
+      <DemoBookingModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   )
 }
+

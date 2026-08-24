@@ -1,7 +1,7 @@
 import { GenericContentPage } from '../components/common/GenericContentPage'
 import { homePageContent } from '../data/homeData'
 import { termsPageData } from '../data/staticPagesData'
-import { JsonLdAboutPage } from '../seo/JsonLd'
+import { JsonLdAboutPage, JsonLdBreadcrumbs } from '../seo/JsonLd'
 import { usePageSeo } from '../seo/pageSeo'
 import { termsSeo } from '../seo/seoCopy'
 
@@ -15,6 +15,7 @@ export function TermsPage() {
         description={termsSeo.description}
         path={termsSeo.path}
       />
+      <JsonLdBreadcrumbs items={[{ name: 'شروط الاستخدام', path: '/terms-of-service' }]} />
       <GenericContentPage
         kicker={termsPageData.kicker}
         title={termsPageData.title}

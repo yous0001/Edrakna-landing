@@ -1,0 +1,24 @@
+{
+  "name": "إدراكنا | Edrakna",
+  "short_name": "Edrakna",
+  "description": "إدراكنا منصة تعليمية مصرية لشرح المناهج والتحضير للامتحانات الوطنية والدولية.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#005bbf",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

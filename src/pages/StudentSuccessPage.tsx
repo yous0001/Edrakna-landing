@@ -1,7 +1,7 @@
 import { GenericContentPage } from '../components/common/GenericContentPage'
 import { homePageContent } from '../data/homeData'
 import { studentSuccessPageData } from '../data/staticPagesData'
-import { JsonLdAboutPage } from '../seo/JsonLd'
+import { JsonLdAboutPage, JsonLdBreadcrumbs } from '../seo/JsonLd'
 import { usePageSeo } from '../seo/pageSeo'
 import { studentSuccessSeo } from '../seo/seoCopy'
 
@@ -18,6 +18,7 @@ export function StudentSuccessPage() {
         description={studentSuccessSeo.description}
         path={studentSuccessSeo.path}
       />
+      <JsonLdBreadcrumbs items={[{ name: 'نجاح الطلاب', path: '/student-success' }]} />
       <GenericContentPage
         kicker={studentSuccessPageData.kicker}
         title={studentSuccessPageData.title}

@@ -102,8 +102,8 @@ export function JsonLdHomePage({ title, description }: JsonLdHomePageProps) {
           },
           {
             '@type': 'Course',
-            name: 'شرح مسار IGCSE',
-            educationalLevel: 'Secondary',
+            name: 'برامج التأسيس والمراجعات النهائية',
+            educationalLevel: 'Primary, Preparatory, Secondary',
             inLanguage: 'ar',
             provider: { '@id': `${origin}/#organization` },
           },
@@ -169,3 +169,37 @@ export function JsonLdAboutPage({ title, description, path = '/about' }: JsonLdA
     />
   )
 }
+
+export interface BreadcrumbItem {
+  readonly name: string
+  readonly path: string
+}
+
+export function JsonLdBreadcrumbs({ items }: { readonly items: readonly BreadcrumbItem[] }) {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'الرئيسية',
+        item: absoluteUrl('/'),
+      },
+      ...items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 2,
+        name: item.name,
+        item: absoluteUrl(item.path),
+      })),
+    ],
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  )
+}
+

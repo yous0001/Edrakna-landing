@@ -1,5 +1,6 @@
 import { Footer } from '../home/Footer'
 import { Header } from '../home/Header'
+import { WhatsAppWidget } from './WhatsAppWidget'
 import styles from './GenericContentPage.module.css'
 import type { GenericContentPageProps } from '../../types/componentProps'
 
@@ -40,6 +41,7 @@ export function GenericContentPage({
         ))}
       </main>
       <Footer tagline={footerTagline} links={footerLinks} />
+      <WhatsAppWidget />
     </div>
   )
 }

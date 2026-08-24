@@ -1,50 +1,72 @@
 :root {
-  /* Reference palette (Tailwind config from design) */
-  --color-primary: #005bbf;
-  --color-primary-rgb: 0 91 191;
-  --color-primary-container: #1a73e8;
-  --color-primary-container-hover: #166bdc;
+  /* Premium Vibrant Color System */
+  --color-primary: #1e6091;
+  --color-primary-rgb: 30 96 145;
+  --color-primary-container: #1a75ff;
+  --color-primary-container-hover: #155dfc;
   --color-on-primary: #ffffff;
-  --color-secondary: #475e8c;
-  --color-secondary-rgb: 71 94 140;
-  --color-secondary-container: #d8e2ff;
-  --color-on-secondary-container: #001a41;
-  --color-tertiary: #9e4300;
-  --color-tertiary-container: #ffdbcb;
-  --color-surface: #f9f9f9;
-  --color-on-surface: #1a1c1c;
-  --color-on-surface-variant: #414754;
-  --color-outline-variant: #c1c6d6;
+
+  /* Accent & Complementary Palette */
+  --color-secondary: #3a86ff;
+  --color-secondary-rgb: 58 134 255;
+  --color-secondary-container: #e0f2fe;
+  --color-on-secondary-container: #0369a1;
+
+  --color-tertiary: #f59e0b;
+  --color-tertiary-container: #fef3c7;
+
+  --color-cyan: #06b6d4;
+  --color-purple: #8b5cf6;
+  --color-emerald: #10b981;
+
+  /* Surface & Neutral Tones */
+  --color-surface: #f8fafc;
+  --color-on-surface: #0f172a;
+  --color-on-surface-variant: #475569;
+  --color-outline-variant: #e2e8f0;
   --color-background: #ffffff;
+
   --color-slate-50: #f8fafc;
   --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
   --color-slate-500: #64748b;
   --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
   --color-slate-900: #0f172a;
 
-  /* Semantic aliases used across modules */
-  --color-brand-primary: var(--color-primary);
-  --color-brand-primary-rgb: var(--color-primary-rgb);
+  /* Semantic Aliases */
+  --color-brand-primary: #1e6091;
+  --color-brand-primary-rgb: 30 96 145;
   --color-brand-dark: var(--color-slate-900);
-  --color-brand-soft: color-mix(in srgb, var(--color-primary) 6%, white);
-  --color-brand-soft-strong: color-mix(in srgb, var(--color-primary) 11%, white);
+  --color-brand-soft: rgba(30, 96, 145, 0.08);
+  --color-brand-soft-strong: rgba(30, 96, 145, 0.15);
+
   --color-text-primary: var(--color-on-surface);
   --color-text-secondary: var(--color-on-surface-variant);
-  --color-text-muted: var(--color-slate-600);
+  --color-text-muted: var(--color-slate-500);
   --color-text-inverse: var(--color-on-primary);
+
   --color-bg: var(--color-background);
   --color-bg-section: var(--color-background);
   --color-border: var(--color-outline-variant);
-  --color-border-soft: color-mix(in srgb, var(--color-outline-variant) 55%, white);
-  --color-focus-ring: rgba(0, 91, 191, 0.28);
+  --color-border-soft: #f1f5f9;
+
+  --color-focus-ring: rgba(30, 96, 145, 0.35);
   --color-focus-ring-inverse: rgba(255, 255, 255, 0.65);
-  --color-button-primary: var(--color-primary);
-  --color-button-primary-hover: #00479a;
+
+  --color-button-primary: #1e6091;
+  --color-button-primary-hover: #174b72;
   --color-surface-muted: var(--color-slate-100);
   --color-surface-strong: var(--color-slate-900);
 
-  --color-hero-peach: color-mix(in srgb, var(--color-tertiary-container) 65%, transparent);
-  --color-hero-peach-strong: color-mix(in srgb, var(--color-secondary-container) 35%, transparent);
+  /* Gradients */
+  --gradient-brand: linear-gradient(135deg, #1e6091 0%, #3a86ff 100%);
+  --gradient-brand-subtle: linear-gradient(135deg, rgba(30, 96, 145, 0.08) 0%, rgba(58, 134, 255, 0.08) 100%);
+  --gradient-hero-glow: radial-gradient(circle at 50% 30%, rgba(30, 96, 145, 0.12) 0%, transparent 60%);
+  --gradient-card-border: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
 
   --font-family-base: 'Almarai', 'Segoe UI', system-ui, sans-serif;
   --font-family-heading: 'Almarai', 'Segoe UI', system-ui, sans-serif;
@@ -67,7 +89,6 @@
   --line-height-relaxed: 1.85;
   --letter-spacing-tight: -0.035em;
 
-  /* Spacing scale — slightly open so blocks breathe more on all breakpoints */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.875rem;
@@ -83,27 +104,27 @@
   --space-28: 9rem;
   --space-32: 10.5rem;
 
-  --radius-sm: 0.5rem;
+  --radius-sm: 0.6rem;
   --radius-md: 1rem;
   --radius-lg: 1.5rem;
   --radius-xl: 2rem;
-  --radius-2xl: 2rem;
-  --radius-3xl: 2.5rem;
+  --radius-2xl: 2.25rem;
+  --radius-3xl: 2.75rem;
   --radius-pill: 999px;
 
-  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.06);
-  --shadow-card: 0 20px 50px rgba(15, 23, 42, 0.1);
-  --shadow-elevated: 0 28px 70px rgba(15, 23, 42, 0.14);
-  --shadow-blue: 0 24px 60px rgba(0, 91, 191, 0.35);
-  --shadow-button: 0 14px 30px rgba(0, 91, 191, 0.28);
-  --shadow-header: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.04);
+  --shadow-card: 0 20px 45px rgba(15, 23, 42, 0.07);
+  --shadow-elevated: 0 25px 60px rgba(15, 23, 42, 0.12);
+  --shadow-blue: 0 20px 50px rgba(30, 96, 145, 0.3);
+  --shadow-button: 0 12px 28px rgba(30, 96, 145, 0.28);
+  --shadow-header: 0 4px 20px rgba(15, 23, 42, 0.05);
 
   --container-width: 80rem;
   --page-padding: clamp(1.125rem, 4.5vw, 1.75rem);
   --page-padding-lg: clamp(1.75rem, 5.5vw, 3.5rem);
   --header-height: 5.5rem;
   --button-height: 3.125rem;
-  --duration-fast: 180ms;
+  --duration-fast: 200ms;
   --duration-slow: 500ms;
 
   --logo-size-header: 3.2rem;
@@ -116,3 +137,33 @@
   --bp-md: 900px;
   --bp-sm: 480px;
 }
+
+[data-theme="dark"] {
+  --color-background: #0b0f19;
+  --color-surface: #131c2e;
+  --color-on-surface: #f8fafc;
+  --color-on-surface-variant: #94a3b8;
+  --color-slate-50: #0f172a;
+  --color-slate-100: #1e293b;
+  --color-slate-500: #94a3b8;
+  --color-slate-600: #cbd5e1;
+  --color-slate-900: #f8fafc;
+  --color-outline-variant: #1e293b;
+  --color-border: #1e293b;
+  --color-border-soft: #162032;
+  --color-surface-muted: #172238;
+
+  --color-brand-primary: #3a86ff;
+  --color-brand-soft: rgba(58, 134, 255, 0.12);
+  --color-brand-soft-strong: rgba(58, 134, 255, 0.22);
+  --color-button-primary: #3a86ff;
+  --color-button-primary-hover: #2563eb;
+
+  --gradient-brand: linear-gradient(135deg, #3a86ff 0%, #60a5fa 100%);
+  --gradient-brand-subtle: linear-gradient(135deg, rgba(58, 134, 255, 0.15) 0%, rgba(96, 165, 250, 0.15) 100%);
+  --shadow-header: 0 4px 25px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 20px 45px rgba(0, 0, 0, 0.4);
+  --shadow-elevated: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+

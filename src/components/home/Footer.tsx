@@ -1,5 +1,6 @@
 import type { FooterProps } from '../../types/componentProps'
 import { Link } from 'react-router-dom'
+import { dashboardUrl } from '../../seo/siteConfig'
 import styles from './Footer.module.css'
 
 export function Footer({ tagline, links }: FooterProps) {
@@ -12,6 +13,9 @@ export function Footer({ tagline, links }: FooterProps) {
         </div>
 
         <nav className={styles.nav} aria-label="روابط الموقع">
+          <a href={dashboardUrl('/login')} style={{ fontWeight: 700, color: 'var(--color-brand-primary)' }}>
+            لوحة التحكم 🚀
+          </a>
           {links.map((link) => (
             link.href.startsWith('/') ? (
               <Link key={link.href + link.label} to={link.href}>

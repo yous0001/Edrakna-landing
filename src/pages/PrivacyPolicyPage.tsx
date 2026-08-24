@@ -1,7 +1,7 @@
 import { GenericContentPage } from '../components/common/GenericContentPage'
 import { homePageContent } from '../data/homeData'
 import { privacyPageData } from '../data/staticPagesData'
-import { JsonLdAboutPage } from '../seo/JsonLd'
+import { JsonLdAboutPage, JsonLdBreadcrumbs } from '../seo/JsonLd'
 import { usePageSeo } from '../seo/pageSeo'
 import { privacySeo } from '../seo/seoCopy'
 
@@ -15,6 +15,7 @@ export function PrivacyPolicyPage() {
         description={privacySeo.description}
         path={privacySeo.path}
       />
+      <JsonLdBreadcrumbs items={[{ name: 'سياسة الخصوصية', path: '/privacy-policy' }]} />
       <GenericContentPage
         kicker={privacyPageData.kicker}
         title={privacyPageData.title}

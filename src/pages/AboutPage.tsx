@@ -5,9 +5,10 @@ import { AboutMissionVisionSection } from '../components/about/AboutMissionVisio
 import { AboutPageCta } from '../components/about/AboutPageCta'
 import { AboutTeamSection } from '../components/about/AboutTeamSection'
 import { AboutValuesSection } from '../components/about/AboutValuesSection'
+import { WhatsAppWidget } from '../components/common/WhatsAppWidget'
 import { Footer } from '../components/home/Footer'
 import { Header } from '../components/home/Header'
-import { JsonLdAboutPage } from '../seo/JsonLd'
+import { JsonLdAboutPage, JsonLdBreadcrumbs } from '../seo/JsonLd'
 import { usePageSeo } from '../seo/pageSeo'
 import { aboutSeo } from '../seo/seoCopy'
 import styles from './HomePage.module.css'
@@ -29,6 +30,7 @@ export function AboutPage() {
   return (
     <div className={styles.page} dir="rtl">
       <JsonLdAboutPage title={aboutSeo.title} description={aboutSeo.description} />
+      <JsonLdBreadcrumbs items={[{ name: 'من نحن', path: '/about' }]} />
       <Header />
       <main>
         <AboutHeroSection content={aboutPageContent.hero} />
@@ -47,6 +49,7 @@ export function AboutPage() {
         <AboutPageCta content={aboutPageContent.cta} />
       </main>
       <Footer tagline={homePageContent.footer.tagline} links={homePageContent.footer.links} />
+      <WhatsAppWidget />
     </div>
   )
 }
