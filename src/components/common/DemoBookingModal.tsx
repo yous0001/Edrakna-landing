@@ -85,7 +85,7 @@ export function DemoBookingModal({ isOpen, onClose }: DemoBookingModalProps) {
                   id="demo-phone"
                   type="tel"
                   className={styles.input}
-                  placeholder="01000000000"
+                  placeholder="01223373972"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   required

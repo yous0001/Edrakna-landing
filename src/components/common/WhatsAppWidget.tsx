@@ -1,7 +1,7 @@
 import styles from './WhatsAppWidget.module.css'
 
 export function WhatsAppWidget() {
-  const phoneNumber = '201000000000'
+  const phoneNumber = '201223373972'
   const message = encodeURIComponent('مرحباً إدراكنا، أود الاستفسار عن المناهج والحصص التجريبية.')
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`
 
