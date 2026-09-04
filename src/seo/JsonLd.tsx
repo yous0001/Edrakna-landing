@@ -1,4 +1,4 @@
-import { SITE_NAME_AR, SITE_NAME_EN, absoluteUrl, siteOrigin } from './siteConfig'
+import { SITE_NAME_AR, SITE_NAME_EN, SOCIAL_LINKS, absoluteUrl, siteOrigin } from './siteConfig'
 
 /** Organization + WebSite schema (sitewide). */
 export function JsonLdSite() {
@@ -17,10 +17,15 @@ export function JsonLdSite() {
           'Edrakna Education',
         ],
         url: origin,
-        logo: absoluteUrl('/logo.png'),
+        logo: absoluteUrl('/edrakna-lg.png'),
         image: absoluteUrl('/hero-students.png'),
         description:
           'منصة تعليمية مصرية تجمع بين الجودة والابتكار الرقمي: مناهج وطنية، دبلومة أمريكية، ومسارى IGCSE؛ لتمكين الطلاب من التفوق الأكاديمي والمنافسة العالمية.',
+        sameAs: [
+          SOCIAL_LINKS.facebook,
+          SOCIAL_LINKS.instagram,
+          SOCIAL_LINKS.tiktok,
+        ],
         address: {
           '@type': 'PostalAddress',
           addressCountry: 'EG',
@@ -33,8 +38,8 @@ export function JsonLdSite() {
           'التعليم الإلكتروني',
           'EdTech',
           'American Diploma',
-          'IGCSE',
           'المنهج المصري',
+          'تأسيس ومراجعات',
         ],
       },
       {

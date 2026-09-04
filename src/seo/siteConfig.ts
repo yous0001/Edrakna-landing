@@ -6,6 +6,12 @@ export const SITE_NAME_AR = 'إدراكنا'
 export const SITE_NAME_EN = 'Edrakna'
 export const SITE_TAGLINE = 'التميز التعليمي الذكي'
 
+export const SOCIAL_LINKS = {
+  facebook: 'https://www.facebook.com/share/1DMPJ2mwhb/',
+  instagram: 'https://www.instagram.com/edrakna.learn/',
+  tiktok: 'https://www.tiktok.com/@edrakna',
+} as const
+
 /** Topics and queries the product should rank for (Arabic + Latin brand terms). */
 export const SEO_KEYWORDS = [
   'إدراكنا',

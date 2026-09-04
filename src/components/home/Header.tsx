@@ -38,7 +38,7 @@ export function Header() {
       <header className={styles.header}>
         <div className={styles.inner}>
           <Link className={styles.brand} to="/" aria-label="إدراكنا الرئيسية">
-            <img src="/logo.png" alt="شعار إدراكنا" width={216} height={72} />
+            <img src="/edrakna-lg.png" alt="شعار إدراكنا" width={216} height={72} />
           </Link>
 
           <nav className={styles.nav} aria-label="روابط الموقع">
