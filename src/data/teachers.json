@@ -1,0 +1,14 @@
+[
+  {
+    "id": "michael-ehab",
+    "name": "مستر مايكل إيهاب",
+    "role": "Science Teacher & Academic Consultant",
+    "subject": "العلوم (Science)",
+    "experience": "خبير تعليمي واستشاري أكاديمي",
+    "bio": "يؤمن بأن العلوم ليست مجرد معلومات نحفظها، بل وسيلة لفهم العالم واكتشافه بطريقة أبسط وأمتع. بجانب دوره كمدرس للعلوم، يشارك كاستشاري أكاديمي في تطوير المحتوى وتجربة التعلم بالمنصة.",
+    "image": "/images/teachers/michael-ehab.png",
+    "badge": "Science Teacher 🔬",
+    "rating": "4.98",
+    "specialties": ["العلوم (Science)", "استشارات أكاديمية", "تطوير تجربة التعلم"]
+  }
+]

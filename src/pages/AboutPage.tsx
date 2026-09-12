@@ -39,12 +39,7 @@ export function AboutPage() {
           vision={aboutPageContent.vision}
           commitment={aboutPageContent.commitment}
         />
-        <AboutTeamSection
-          kicker={aboutPageContent.team.kicker}
-          title={aboutPageContent.team.title}
-          description={aboutPageContent.team.description}
-          members={aboutPageContent.team.members}
-        />
+        <AboutTeamSection />
         <AboutValuesSection content={aboutPageContent.values} />
         <AboutPageCta content={aboutPageContent.cta} />
       </main>
